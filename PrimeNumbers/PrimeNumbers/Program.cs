@@ -12,11 +12,13 @@ namespace PrimeNumbers
         static void Main(string[] args)
         {
             int n = 20;
-            int m = 5;
-            int poz = n / m;
+            int poz;
+			int m;
             using (new MPI.Environment(ref args))
             {
                 Intracommunicator comm = Communicator.world;
+				m = comm.Size;
+				poz = n / m;
                 if (comm.Rank == 0)
                 {
                     // program for rank 0
@@ -36,11 +38,13 @@ namespace PrimeNumbers
                 {
                     // program for all other ranks
                     int msg = comm.Receive<int>(comm.Rank - 1, 0);
-                    comm.Send(msg + poz, (comm.Rank + 1) % comm.Size, 0);
+					int range = msg + poz;
+                    comm.Send(range, (comm.Rank + 1) % comm.Size, 0);
 
+					if(comm.Rank == m) 
+						range = m;
                     //Console.WriteLine(msg);
-
-                    for (int i = msg; i < msg + poz; i++)
+                    for (int i = msg; i < range; i++)
                     {
                         if (isPrime(i) || i == 2)
                         {
