@@ -1,0 +1,2 @@
+E:\C#Projects\Matrix\Matrix\bin\Debug\Matrix.exe.config
+E:\C#Projects\Matrix\Matrix\obj\Debug\Matrix.csprojResolveAssemblyReference.cache
