@@ -6,3 +6,6 @@ E:\C#Projects\PrimeNumbers\PrimeNumbers\bin\Debug\MPI.xml
 E:\C#Projects\PrimeNumbers\PrimeNumbers\obj\Debug\PrimeNumbers.csprojResolveAssemblyReference.cache
 E:\C#Projects\PrimeNumbers\PrimeNumbers\obj\Debug\PrimeNumbers.exe
 E:\C#Projects\PrimeNumbers\PrimeNumbers\obj\Debug\PrimeNumbers.pdb
+E:\OtherStuff\laboratorPDA\PrimeNumbers\PrimeNumbers\bin\Debug\PrimeNumbers.exe.config
+E:\OtherStuff\laboratorPDA\PrimeNumbers\PrimeNumbers\obj\Debug\PrimeNumbers.exe
+E:\OtherStuff\laboratorPDA\PrimeNumbers\PrimeNumbers\obj\Debug\PrimeNumbers.pdb
