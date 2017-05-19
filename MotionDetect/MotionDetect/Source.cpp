@@ -5,7 +5,7 @@
 using namespace cv;
 using namespace std;
 
-__global__ void getC(int *a, int *b, int *c) {
+__global__ void calcDiff(int *a, int *b, int *c) {
 	c[threadIdx.x] = a[threadIdx.x] - b[threadIdx.x];
 }
 
@@ -55,11 +55,18 @@ int main() {
 		cudaMemcpy(pB, arrayB, (N)*sizeof(int), cudaMemcpyHostToDevice);
 		cudaMemcpy(pC, arrayC, (N)*sizeof(int), cudaMemcpyHostToDevice);
 
-		getC <<<1, N>>>(pA, pB, pC);
+		calcDiff <<<1, N>>>(pA, pB, pC);
 
 		cudaMemcpy(arrayC, pC, (N*N)*sizeof(int), cudaMemcpyDeviceToHost);
-
-		if (prevArrayC != arrayC[i]) {
+		
+		int sumA = 0;
+		int sumB = 0;
+		for(int i = 0; i < N; i++) {
+			sumA += arrayC[i];
+			sumB += prevArrayC[i];
+		}
+		
+		if(sumA < sumB - threshhold || sumA > sumB + hreshold) {
 			printf("Motion detected!");
 		}
 
