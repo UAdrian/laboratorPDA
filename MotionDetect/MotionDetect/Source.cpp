@@ -66,7 +66,7 @@ int main() {
 			sumB += prevArrayC[i];
 		}
 		
-		if(sumA < sumB - threshhold || sumA > sumB + hreshold) {
+		if(sumA < sumB - threshold || sumA > sumB + threshold) {
 			printf("Motion detected!");
 		}
 
