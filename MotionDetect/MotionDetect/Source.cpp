@@ -14,7 +14,7 @@ int main() {
 	Mat prevImage;
 	vector<uchar> arrayC;
 	vector<uchar> prevArrayC;
-	int threshold = 20;
+	int threshold = 200;
 
 	VideoCapture cap;
 	cap.open(0);
