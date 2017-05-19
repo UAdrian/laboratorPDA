@@ -1,3 +1,4 @@
+#include<iostream.h>
 #include<opencv\cv.h>
 #include<opencv\highgui.h>
 #include <cuda.h>
