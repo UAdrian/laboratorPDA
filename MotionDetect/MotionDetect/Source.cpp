@@ -57,7 +57,7 @@ int main() {
 
 		calcDiff <<<1, N>>>(pA, pB, pC);
 
-		cudaMemcpy(arrayC, pC, (N*N)*sizeof(int), cudaMemcpyDeviceToHost);
+		cudaMemcpy(arrayC, pC, (N)*sizeof(int), cudaMemcpyDeviceToHost);
 		
 		int sumA = 0;
 		int sumB = 0;
